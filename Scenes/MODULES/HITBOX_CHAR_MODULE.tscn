@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7um7stcdhwfa"]
+
+[ext_resource type="Script" path="res://Scripts/MODULES_SCRIPTS/HITBOX_CHAR_MODULE.gd" id="1_44qkr"]
+
+[node name="HITBOX_CHAR_MODULE" type="CharacterBody2D"]
+script = ExtResource("1_44qkr")

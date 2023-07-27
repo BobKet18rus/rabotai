@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3kdsb1km0smu"]
+
+[sub_resource type="GDScript" id="GDScript_ttbat"]
+
+[node name="StateMachine" type="Node2D"]
+script = SubResource("GDScript_ttbat")

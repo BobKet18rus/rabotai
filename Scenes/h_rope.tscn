@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkg0cxghyq5ge"]
+
+[ext_resource type="Script" path="res://Scripts/Interactive_objects/h_rope.gd" id="1_rwb11"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qiedn"]
+b = Vector2(640, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_adm7c"]
+a = Vector2(8, 0)
+b = Vector2(0, 0)
+
+[node name="h_rope" type="Node2D"]
+script = ExtResource("1_rwb11")
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+shape = SubResource("SegmentShape2D_qiedn")
+
+[node name="borders" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+position = Vector2(-104, 0)
+shape = SubResource("SegmentShape2D_adm7c")
+debug_color = Color(0.843137, 0, 0.282353, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+position = Vector2(744, 0)
+shape = SubResource("SegmentShape2D_adm7c")
+debug_color = Color(0.843137, 0, 0.282353, 0.419608)
+
+[connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
+[connection signal="area_exited" from="area" to="." method="_on_area_area_exited"]
+[connection signal="area_entered" from="borders" to="." method="_on_borders_area_entered"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh3xrokec5joa"]
+
+[ext_resource type="Script" path="res://addons/wiggly_appendage_2d/wiggly_appendage_2d.gd" id="1_iwha3"]
+[ext_resource type="Texture2D" uid="uid://cue6a5b6ysfgh" path="res://thick_vein.png" id="1_we153"]
+
+[sub_resource type="Gradient" id="Gradient_gskxy"]
+offsets = PackedFloat32Array(0, 0.278146, 0.728477, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.842094, 0.000559857, 0.842088, 1, 7.70092e-07, 0.891218, 0.902466, 1, 1, 1, 1, 1)
+
+[node name="WigglyAppendage2D" type="Line2D"]
+position = Vector2(-182, -55)
+rotation = 7.84513
+scale = Vector2(1.8025, 1.4392)
+points = PackedVector2Array(0, 0, 8.75, -0.000376701, 15, -0.000530243, 20, -0.0007267, 25, -0.00123215, 30, -0.00215149, 35, -0.00358963, 40, -0.00554657)
+gradient = SubResource("Gradient_gskxy")
+texture = ExtResource("1_we153")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("1_iwha3")
+segment_count = 4
+segment_length = 10.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpa0hiqfkqve0"]
+
+[ext_resource type="PackedScene" uid="uid://cc00yt5vbdn2l" path="res://test_carving.tscn" id="1_d2jwb"]
+[ext_resource type="Script" path="res://carve_area.gd" id="2_k2c61"]
+[ext_resource type="PackedScene" uid="uid://cpq4gij1tp6fs" path="res://Scenes/GG.tscn" id="3_oxeqb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="b" type="Polygon2D" parent="."]
+position = Vector2(288, -112)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-1, 47, 95, 47, 111, 39, 24, 8, 56, -32, 120, -48, 96, -72, 64, -80, -1, -81, -65, -81, -97, -73, -121, -49, -129, -17, -56, -40, -64, 0, -97, 47)
+script = ExtResource("2_k2c61")
+
+[node name="GG" parent="." instance=ExtResource("3_oxeqb")]
+position = Vector2(-32, -240)
+
+[node name="a" parent="." instance=ExtResource("1_d2jwb")]
+polygon = PackedVector2Array(-288, -168, 80, -136, 160, -392, 248, -384, 225.32, -125.446, 704, 96, -280, 56)
+
+[editable path="a"]

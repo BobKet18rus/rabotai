@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://foyyj81qimg4"]
+
+[ext_resource type="Script" path="res://Scripts/MODULES_SCRIPTS/PICKUP_MODULE.gd" id="1_qogo6"]
+
+[node name="PICKUP_MODULE" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_qogo6")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+modulate = Color(1, 1, 1, 0)

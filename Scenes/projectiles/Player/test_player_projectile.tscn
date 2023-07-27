@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dicqjr60kd3lr"]
+
+[ext_resource type="PackedScene" uid="uid://c3k73hdhrpkp6" path="res://Scenes/MODULES/PROJECTILE_MODULE.tscn" id="1_15v42"]
+[ext_resource type="Texture2D" uid="uid://dtcii1bhsg28p" path="res://icon.png" id="2_j80ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3wj4"]
+size = Vector2(512, 48)
+
+[node name="test_player_projectile" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PROJECTILE_MODULE" parent="Node2D" instance=ExtResource("1_15v42")]
+damage = 5
+life_time = 0.1
+damage_to_enemies = true
+is_piercing = true
+
+[node name="life_time" parent="Node2D/PROJECTILE_MODULE" index="0"]
+wait_time = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PROJECTILE_MODULE"]
+shape = SubResource("RectangleShape2D_n3wj4")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0.14902, 0, 0.843137)
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(8, 0.75)
+texture = ExtResource("2_j80ud")
+
+[editable path="Node2D/PROJECTILE_MODULE"]

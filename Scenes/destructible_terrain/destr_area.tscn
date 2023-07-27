@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj7wwv2mv0bq0"]
+
+[ext_resource type="Script" path="res://Scripts/destrucktable_terrain/destr_area.gd" id="1_lh1me"]
+
+[node name="destr_area" type="Polygon2D"]
+polygon = PackedVector2Array(371, 464, 476, 779, 1605, 787, 1109, 157)
+script = ExtResource("1_lh1me")
+
+[node name="col" type="AnimatableBody2D" parent="."]
+
+[node name="col_polygon" type="CollisionPolygon2D" parent="col"]

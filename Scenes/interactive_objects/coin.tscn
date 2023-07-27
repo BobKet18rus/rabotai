@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cehbe61alsmj1"]
+
+[ext_resource type="Script" path="res://Scripts/Interactive_objects/coin.gd" id="1_fb1g3"]
+[ext_resource type="Texture2D" uid="uid://bhdjd6blaf3gk" path="res://Sprites/stuff/normal.png" id="1_fw563"]
+[ext_resource type="PackedScene" uid="uid://foyyj81qimg4" path="res://Scenes/MODULES/PICKUP_MODULE.tscn" id="3_54m58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd6ij"]
+size = Vector2(80, 80)
+
+[node name="Coin" type="Node2D"]
+script = ExtResource("1_fb1g3")
+
+[node name="MODULES" type="Node2D" parent="."]
+
+[node name="PICKUP_MODULE" parent="MODULES" instance=ExtResource("3_54m58")]
+amount = 1.0
+
+[node name="Collision" parent="MODULES/PICKUP_MODULE" index="0"]
+modulate = Color(1, 1, 1, 1)
+shape = SubResource("RectangleShape2D_wd6ij")
+
+[node name="Tex" type="Sprite2D" parent="."]
+modulate = Color(1, 0.917647, 0, 1)
+scale = Vector2(1.066, 0.8)
+texture = ExtResource("1_fw563")
+
+[editable path="MODULES/PICKUP_MODULE"]
