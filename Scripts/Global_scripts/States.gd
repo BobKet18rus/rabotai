@@ -14,5 +14,4 @@ enum {
 	LEDGE = 9,
 	WALL = 10,
 	SHOOTING = 11
-	
 }

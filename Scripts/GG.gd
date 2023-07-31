@@ -1,6 +1,18 @@
 extends CharacterBody2D
 
-var state:int = sm.FALL
+@export_enum(
+"IDLE: 1",
+"MOVE: 2",
+"FALL: 3",
+"JUMP: 4",
+"RING: 5",
+"H_ROPE: 6",
+"D_ROPE: 7",
+"V_ROPE: 8",
+"LEDGE: 9",
+"WALL: 10",
+"SHOOTING: 11"
+) var state:int = sm.FALL
 
 @export var gravity:Vector2 = Vector2(0, 80)
 @export var jump_force:int = -1000
@@ -29,6 +41,9 @@ var debug_mode:bool
 
 var Clippy_idle_pos:Vector2
 
+func shange_state(new_state:int):
+	state = new_state
+
 func die():#переделаю
 	velocity = Vector2.ZERO
 	death_counter += 1
@@ -50,6 +65,8 @@ func state_machine():
 				state = sm.MOVE
 			if not(is_on_floor()):
 				state = sm.FALL
+				
+			shoot()
 			jump(1)
 			jump_timer_starting()
 			jump_off(17)
@@ -58,16 +75,17 @@ func state_machine():
 			move(1,1)
 			if not(is_on_floor()):
 				state = sm.FALL
+				
+			shoot()
 			jump(1)
 			jump_timer_starting()
 			jump_off(17)
 		sm.FALL:
-		
 			if $timers/c_timer.is_stopped():
 				jump_possibility = false
 			else:
 				jump_possibility = true
-			
+
 			jump(1)
 			jump_timer_starting()
 			gravitation(1)
@@ -125,7 +143,12 @@ func state_machine():
 			elif not(is_on_wall()):
 				state = sm.FALL
 		sm.SHOOTING:
-			pass
+			idle(1)
+			shoot()
+#			if $Animator.current_animation == "SHOOTING_LEFT" or "SHOOTING_LEFT":
+#				state = sm.SHOOTING
+#			else:
+#				state = sm.IDLE
 
 func jump_off(l):
 	if Input.is_action_just_pressed("down"):
@@ -205,22 +228,46 @@ func Clippy():
 func Money_system():
 	$CANVAS/HUD/Money.text = "$"+" "+str(money)
 	
-func _ready():
-	debug_mode = false
+func shoot():
+	if Input.is_action_pressed("LMB"):
+		if dir == -1:
+			state = sm.SHOOTING
+			if not($Animator.is_playing()):
+				$Animator.play("SHOOTING_LEFT")
+		elif dir == 1:
+			state = sm.SHOOTING
+			if not($Animator.is_playing()):
+				$Animator.play("SHOOTING_RIGHT")
 	
-func spawn_projectile(spawn_coordinates:Vector2):
-	var new_projectile:Node2D = weapons[0].instantiate()
+func spawn_projectile(ID:int, spawn_coordinates:Vector2, rot:int):
+	var new_projectile:Node2D = weapons[ID].instantiate()
 	new_projectile.position = self.position + spawn_coordinates
+	new_projectile.rotation_degrees = rot
 	get_parent().add_child(new_projectile)
 	
 #####################################################################################
 	
+func _ready() -> void:
+	debug_mode = false
+	print(Vector2(270, 0).rotated(deg_to_rad(45)))
+	print(Vector2(270, 0).rotated(deg_to_rad(135)))
+
 func _process(_delta):
 	debug()
 	Money_system()
 	Clippy()
 	
-	if Input.is_action_just_pressed("t1"):#нажатие клавиши 1
+	if dir == -1:
+		$sprite.flip_h = true
+	elif dir == 1:
+		$sprite.flip_h = false
+	
+	if Input.is_action_just_pressed("left"):
+		dir = -1
+	elif Input.is_action_just_pressed("right"):
+		dir = 1
+	
+	if Input.is_action_just_pressed("t1"):
 		die()
 		
 	if $rotate_cast.is_colliding():

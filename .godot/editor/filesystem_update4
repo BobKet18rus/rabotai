@@ -1,8 +1,9 @@
 res://default_env.tres
+res://Scenes/GG.tscn
+res://Scripts/GG.gd
 res://Scenes/Main_scene.tscn
 res://Scenes/MODULES/PICKUP_MODULE.tscn
 res://test_carving.tscn
-res://Scenes/GG.tscn
 res://Scenes/projectiles/Player/test_player_projectile.tscn
 res://Scenes/MODULES/PROJECTILE_MODULE.tscn
 res://Scenes/interactive_objects/coin.tscn
