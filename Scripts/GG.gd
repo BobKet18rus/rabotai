@@ -230,12 +230,11 @@ func Money_system():
 	
 func shoot():
 	if Input.is_action_pressed("LMB"):
+		state = sm.SHOOTING
 		if dir == -1:
-			state = sm.SHOOTING
 			if not($Animator.is_playing()):
 				$Animator.play("SHOOTING_LEFT")
-		elif dir == 1:
-			state = sm.SHOOTING
+		if dir == 1:
 			if not($Animator.is_playing()):
 				$Animator.play("SHOOTING_RIGHT")
 	
@@ -249,22 +248,18 @@ func spawn_projectile(ID:int, spawn_coordinates:Vector2, rot:int):
 	
 func _ready() -> void:
 	debug_mode = false
-	print(Vector2(270, 0).rotated(deg_to_rad(45)))
-	print(Vector2(270, 0).rotated(deg_to_rad(135)))
+#	print(Vector2(270, 0).rotated(deg_to_rad(45)))
+#	print(Vector2(270, 0).rotated(deg_to_rad(135)))
 
 func _process(_delta):
 	debug()
 	Money_system()
 	Clippy()
 	
-	if dir == -1:
-		$sprite.flip_h = true
-	elif dir == 1:
-		$sprite.flip_h = false
 	
-	if Input.is_action_just_pressed("left"):
+	if Input.is_action_pressed("left"):
 		dir = -1
-	elif Input.is_action_just_pressed("right"):
+	if Input.is_action_pressed("right"):
 		dir = 1
 	
 	if Input.is_action_just_pressed("t1"):

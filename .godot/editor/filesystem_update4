@@ -1,6 +1,4 @@
 res://default_env.tres
-res://Scenes/GG.tscn
-res://Scripts/GG.gd
 res://Scenes/Main_scene.tscn
 res://Scenes/MODULES/PICKUP_MODULE.tscn
 res://test_carving.tscn
@@ -12,3 +10,10 @@ res://Scenes/MODULES/STATS_MODULE.tscn
 res://Scenes/MODULES/HITBOX_MODULE.tscn
 res://Scenes/MODULES/HITBOX_CHAR_MODULE.tscn
 res://Scenes/MODULES/HITBOX_STATIC_MODULE.tscn
+res://Scenes/GG.tscn
+res://Scripts/MODULES_SCRIPTS/PROJECTILE_MODULE.gd
+res://Scripts/GG.gd
+res://test_carving2.tscn
+res://Materials/SS2D_materials/whitebox.tres
+res://Scenes/destructible_terrain/test_carving.tscn
+res://Scenes/destructible_terrain/test_carving2.tscn

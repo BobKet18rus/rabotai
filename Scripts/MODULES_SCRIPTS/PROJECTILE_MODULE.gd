@@ -42,5 +42,3 @@ func _on_body_entered(body: Node2D) -> void:
 			body.health = body.health - (damage - (damage * body.defense))
 			if not(is_piercing):
 				get_parent().get_parent().queue_free()
-			
-	

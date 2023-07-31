@@ -34,8 +34,8 @@ instance_dock/scenes=[{
 
 config/name="rabotai"
 run/main_scene="res://Scenes/Main_scene.tscn"
-config/features=PackedStringArray("4.0")
-config/icon="res://icon.png"
+config/features=PackedStringArray("4.1")
+config/icon="res://Sprites/icon.png"
 
 [autoload]
 
@@ -50,11 +50,11 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
+window/size/mode=2
 window/size/initial_position_type=0
 window/size/resizable=false
-mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 window/stretch/mode="viewport"
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 window/size/fullscreen=true
 
 [editor]
@@ -63,7 +63,7 @@ movie_writer/movie_file="C:/Games/Godot/projects/rabotai_blyat/Movies__/movie.av
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/wiggly_appendage_2d/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/Hider Node/plugin.cfg", "res://addons/InstanceDock/plugin.cfg", "res://addons/anim_player_refactor/plugin.cfg", "res://addons/nklbdev.parallax/plugin.cfg", "res://addons/super_spector/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/float_script_editor/plugin.cfg", "res://addons/CursorShapePreviewer/plugin.cfg", "res://addons/softbody2d/plugin.cfg", "res://addons/sprite_painter/plugin.cfg")
+enabled=PackedStringArray("res://addons/CursorShapePreviewer/plugin.cfg", "res://addons/Hider Node/plugin.cfg", "res://addons/InstanceDock/plugin.cfg", "res://addons/anim_player_refactor/plugin.cfg", "res://addons/float_script_editor/plugin.cfg", "res://addons/nklbdev.parallax/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/softbody2d/plugin.cfg", "res://addons/sprite_painter/plugin.cfg", "res://addons/super_spector/plugin.cfg", "res://addons/wiggly_appendage_2d/plugin.cfg")
 
 [gui]
 
@@ -186,7 +186,7 @@ run={
 }
 LMB={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(259, 23),"global_position":Vector2(264, 75),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(259, 23),"global_position":Vector2(264, 75),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
@@ -197,7 +197,7 @@ debug={
 }
 shoot={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(268, 5),"global_position":Vector2(273, 57),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(268, 5),"global_position":Vector2(273, 57),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
