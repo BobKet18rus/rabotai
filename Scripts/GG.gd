@@ -285,6 +285,7 @@ func _process(_delta):
 	else:
 		$sprite.rotation = lerp_angle($sprite.rotation, 0.0, 0.1)
 	
+@warning_ignore("unused_parameter")
 func _physics_process(delta):
 	
 	var was_on_floor:bool = is_on_floor()

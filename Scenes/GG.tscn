@@ -213,7 +213,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [0, Vector2(190.919, 0), 315],
+"args": [0, Vector2(190.919, -190.919), 315],
 "method": &"spawn_projectile"
 }]
 }
